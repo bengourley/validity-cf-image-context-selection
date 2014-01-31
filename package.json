@@ -1,6 +1,6 @@
 {
   "name": "validity-cf-image-context-selection",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Validity style validator to ensure that required image contexts are selected with an image widget array",
   "main": "validator.js",
   "directories": {
