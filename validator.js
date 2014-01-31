@@ -6,7 +6,7 @@ function createValidator(requiredContexts) {
 
     var images = object[key]
 
-    if (!images.widgets) return cb(null, 'No images are available')
+    if (!images.widgets) return cb(null, 'Images are required')
 
     var selectedContexts = []
     images.widgets.forEach(function (image) {
