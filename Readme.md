@@ -17,15 +17,13 @@ Below is a simple example for usage with schemata and save:
 
 var validity = require('validity')
   , schemata = require('schemata')
-  , save = require('save')
-  , collection = save('user')
   , createContextValidator = require('validity-cf-image-context-selection')
   , requiredContexts = [ 'main', 'thumbnail' ]
 
 var schema = schemata(
     { images:
       { type: String
-      , validators: { all: [ validity.email, createContextValidator(requiredContexts) ] }
+      , validators: { all: [ createContextValidator(requiredContexts) ] }
       }
     })
 ```
