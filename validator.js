@@ -10,7 +10,7 @@ function createValidator(requiredContexts) {
 
     var selectedContexts = []
     images.widgets.forEach(function (image) {
-      selectedContexts.concat(image.selectedContexts)
+      selectedContexts = selectedContexts.concat(image.selectedContexts)
     })
 
     var notSelected = requiredContexts.some(function (requiredContext) {

@@ -18,7 +18,7 @@ describe('Image context selection validator', function () {
     var validate = createValidator([ 'Main', 'Thumbnail' ])
     validate('images', 'Images', require('./fixtures/valid'), function (err, errMessage) {
       if (err) return done(err)
-      assert.equal('Image contexts require selection: Main, Thumbnail', errMessage)
+      assert(!errMessage)
       done()
     })
   })
