@@ -23,4 +23,22 @@ describe('Image context selection validator', function () {
     })
   })
 
+  it('should provide an error message when no `widgets` on key', function (done) {
+    var validate = createValidator([ 'Main', 'Thumbnail' ])
+    validate('images', 'Images', { images: {} }, function (err, errMessage) {
+      if (err) return done(err)
+      assert.equal(errMessage, 'Images are required')
+      done()
+    })
+  })
+
+  it('should report an error if given an empty object', function (done) {
+    var validate = createValidator([ 'Main', 'Thumbnail' ])
+    validate('images', 'Images', {}, function (err, errMessage) {
+      if (err) return done(err)
+      assert.equal(errMessage, 'Images are required')
+      done()
+    })
+  })
+
 })
